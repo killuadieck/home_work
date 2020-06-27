@@ -33,13 +33,6 @@ def twosum_one(nums,target):
 def twosum_two(nums,target):
     data = {}
     for i, num in enumerate(nums):
-        if data.get(target - num) is not None: # 对data里进行key值查找，如果不存在则返回None，注意None和空值不一样
+        if data.get(target - num) is not None: # 对data里进行key值查找，如果不存在则返回None，注意None和空值不一样。并且返回值可能为0，0也为假
             return [data.get(target - num), i]
         data[num] = i
-
-if __name__ == '__main__':
-
-    nums = [2,3,1,2]
-    target = 3
-    result = twosum_two(nums,target)
-    print(result)
